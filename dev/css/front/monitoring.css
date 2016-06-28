@@ -1,0 +1,81 @@
+/* Progress bar */
+.serverMonitoring .ipsProgressBar_green {
+    background: #3FC380;
+}
+.serverMonitoring .ipsProgressBar_lightBlue {
+    background: #22A7F0;
+}
+.serverMonitoring .ipsProgressBar_blue {
+    background: #446CB3;
+}
+.serverMonitoring .ipsProgressBar_yellow {
+    background: #F9BF3B;
+}
+.serverMonitoring .ipsProgressBar_orange {
+    background: #F9690E;
+}
+.serverMonitoring .ipsProgressBar_red {
+    background: #EF4836;
+}
+.serverMonitoring .ipsProgressBar_progress a {
+    color: inherit;
+}
+.serverMonitoring .ipsProgressBar {
+    position: relative;
+}
+.serverMonitoring .ipsProgressBar_progress.ipsProgressBar_big {
+    position: static;
+}
+.serverMonitoring .ipsProgressBar_mini {
+    height: 22px;
+}
+.serverMonitoring .ipsProgressBar_mini .ipsProgressBar_progress {
+    position: static;
+    line-height: 22px;
+}
+.serverMonitoring .ipsProgressBar_mini .ipsProgressBar_progress .playersCount {
+    width: 100%;
+    position: absolute;
+}
+.serverMonitoring .ipsProgressBar_progress.ipsProgressBar_big .playersCount {
+    width: 100%;
+    position: absolute;
+}
+
+/* Other */
+.hostInfo td i.fa {
+    font-size: 18px;
+}
+.serverMonitoring .ipsBadge_gt {
+    background: #1a1a1a;
+}
+.serverMonitoring .ipsBadge_gt img {
+    width: 14px;
+    margin-top: -2px;
+}
+div[aria-label="Players"] .ipsDialog_content {
+    height: 600px;
+    overflow-y: scroll;
+}
+
+/* Players */
+.playersInfo {
+    padding: 10px 15px;
+}
+.playersInfo table tr:nth-child(2) td i.fa-user {
+    color: #F9BF3B;
+    font-size: 16px;
+}
+.playersInfo table tr:nth-child(3) td i.fa-user {
+    color: #BDC3C7;
+    font-size: 16px;
+}
+.playersInfo table tr:nth-child(4) td i.fa-user {
+    color: #965A38;
+    font-size: 16px;
+}
+.playersInfo table tr:nth-child(2) td i.fa-user:before,
+.playersInfo table tr:nth-child(3) td i.fa-user:before,
+.playersInfo table tr:nth-child(4) td i.fa-user:before {
+    content: "\f091";
+}

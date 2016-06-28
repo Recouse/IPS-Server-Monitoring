@@ -1,0 +1,46 @@
+<ips:template parameters="$serverInfo, $serverInfoOther, $lastUpdate, $allPlayers" />
+<div class="ipsBox ipsSpacer_bottom serverMonitoring">
+    <div class="ipsPageHeader ipsClearfix ipsSpacer_bottom">
+        <a href="#" class="ipsPos_right ipsType_noUnderline"><i class="fa fa-refresh"></i> Last update: {$lastUpdate|raw}</a>
+        <h1 class="ipsType_pageTitle">{lang="__app_monitoring"}</h1>
+    </div>
+    <table class="ipsTable ipsTable_responsive">
+        <tr>
+            {{if settings.monitoring_showGameIcon == 1}}<th></th>{{endif}}
+            <th>{lang="monitoring_status"}</th>
+            <th>{lang="monitoring_ip_address"}</th>
+            <th class="ipsTable_sortable" data-ipsT>{lang="monitoring_server_name"}</th>
+            <th>{lang="monitoring_map"}</th>
+            {{if settings.monitoring_showMod == 1}}<th>{lang="monitoring_mod"}</th>{{endif}}
+            <th>{lang="monitoring_other"}</th>
+            {{if setting.monitoring_showModerator == 1}}<th>{lang="monitoring_moderator"}</th>{{endif}}
+            <th>{lang="monitoring_players"}</th>
+        </tr>
+        {{if !empty( $serverInfo )}}
+            {template="serverInfoRows" group="server" app="monitoring" params="$serverInfo, $serverInfoOther"}
+            <tr>
+                <td colspan="9">
+                    <div class="ipsProgressBar ipsProgressBar_fullWidth" _title="{lang="monitoring_filled" sprintf="$allPlayers['AllFill']"}" data-ipsTooltip>
+                        <div class="ipsProgressBar_progress ipsProgressBar_big ipsProgressBar_{{if $allPlayers['AllFill'] <= 20}}green
+                    {{elseif $allPlayers['AllFill'] > 20 && $allPlayers['AllFill'] <= 40}}lightBlue
+                    {{elseif $allPlayers['AllFill'] > 40 && $allPlayers['AllFill'] <= 60}}blue
+                    {{elseif $allPlayers['AllFill'] > 60 && $allPlayers['AllFill'] <= 80}}yellow
+                    {{elseif $allPlayers['AllFill'] > 80 && $allPlayers['AllFill'] < 100}}orange
+                    {{elseif $allPlayers['AllFill'] == 100}}red
+                    {{endif}}" style="width: {$allPlayers['AllFill']}%" data-role="progressBar">
+                            <div class="playersCount">{$allPlayers['AllPlayers']}/{$allPlayers['MaxAllPlayers']}</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        {{else}}
+            <tr>
+                <td colspan="9">
+                    <div class="ipsPad_double ipsType_light ipsType_center">
+                        There are no servers to display.
+                    </div>
+                </td>
+            </tr>
+        {{endif}}
+    </table>
+</div>

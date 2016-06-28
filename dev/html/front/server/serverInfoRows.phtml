@@ -1,0 +1,142 @@
+<ips:template parameters="$serverInfo, $serverInfoOther" />
+{{foreach $serverInfo as $n => $server}}
+    <tr>
+        {{if settings.monitoring_showGameIcon == 1}}
+            <td>
+                {{if $serverInfoOther[$n]['game'] == 'other' || empty( $serverInfoOther[$n]['game'] )}}
+                    <img src="{resource="icons/other.gif" app="monitoring" location="front"}" />
+                {{else}}
+                    <img src="{resource="icons/{$serverInfoOther[$n]['game']}.png" app="monitoring" location="front"}" />
+                {{endif}}
+            </td>
+        {{endif}}
+        <td>
+            {{if $serverInfo[$n]['Info']['Online'] == 1}}
+                <span class="ipsBadge ipsBadge_positive">Online</span>
+            {{else}}
+                <span class="ipsBadge ipsBadge_neutral">Online</span>
+            {{endif}}
+        </td>
+        <td>{$serverInfo[$n]['Info']['HostAddress']}</td>
+        <td>
+            <a href="#" location="front" app="monitoring"}"{{if $serverInfoOther[$n]['game'] != 'samp'}} data-ipsHover-content="#hostInfo{$n}" data-ipsHover{{endif}}>{$serverInfo[$n]['Info']['HostName']}</a>
+            {{if $serverInfoOther[$n]['game'] != 'samp'}}
+                <div id="hostInfo{$n}" class="hostInfo ipsHide">
+                    <table class="ipsTable">
+                        <tr>
+                            <th>Protocol</th>
+                            <th>Bots</th>
+                            <th>OS</th>
+                            <th>Password</th>
+                            <th>VAC</th>
+                        </tr>
+                        <tr>
+                            <td>{$serverInfo[$n]['Info']['Protocol']}</td>
+                            <td>{$serverInfo[$n]['Info']['Bots']}</td>
+                            <td>
+                                {{if $serverInfo[$n]['Info']['Os'] == 'l'}}
+                                    <i class="fa fa-linux"></i>
+                                {{else}}
+                                    <i class="fa fa-windows"></i>
+                                {{endif}}
+                            </td>
+                            <td>
+                                {{if $serverInfo[$n]['Info']['Password'] == true}}
+                                    <i class="fa fa-check-circle"></i>
+                                {{else}}
+                                    <i class="fa fa-times-circle"></i>
+                                {{endif}}
+                            </td>
+                            <td>
+                                {{if $serverInfo[$n]['Info']['Secure'] == true}}
+                                    <i class="fa fa-check-circle"></i>
+                                {{else}}
+                                    <i class="fa fa-times-circle"></i>
+                                {{endif}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            {{endif}}
+        </td>
+        <td>
+            {{if $serverInfoOther[$n]['game'] != 'samp'}}
+                <a href="#" data-ipsHover-content="#mapImage{$n}" data-ipsHover-width="160" data-ipsHover>{$serverInfo[$n]['Info']['Map']}</a>
+                <div id="mapImage{$n}" class="ipsHide">
+                    <img src="{$serverInfo[$n]['Info']['MapImage']}" />
+                </div>
+            {{else}}
+                {$serverInfo[$n]['Info']['Map']}
+            {{endif}}
+        </td>
+        {{if setting.monitoring_showMod == 1}}
+            <td>
+                <span _title="{$serverInfoOther[$n]['mod_desc']}" data-ipsTooltip>{$serverInfoOther[$n]['mod']}</span>
+            </td>
+        {{endif}}
+        <td>
+            {{if settings.monitoring_showGameTrackerIcon == 1 && $serverInfoOther[$n]['game'] != 'samp' && $serverInfoOther[$n]['game'] != 'other'}}
+                <a href="http://www.gametracker.com/server_info/{$serverInfo[$n]['Info']['HostAddress']}/" target="_blank"><span class="ipsBadge ipsBadge_gt ipsBadge_icon" _title="{lang="monitoring_game_tracker"}" data-ipsTooltip><img src="{resource="icons/gt.png" app="monitoring" location="front"}" /></span></a>
+            {{endif}}
+            {{if settings.monitoring_showSteamConnectIcon == 1 && $serverInfoOther[$n]['game'] != 'samp' && $serverInfoOther[$n]['game'] != 'other'}}
+                <a href="steam://connect/{$serverInfo[$n]['Info']['HostAddress']}" target="_blank"><span class="ipsBadge ipsBadge_new ipsBadge_icon" _title="{lang="monitoring_steam"}" data-ipsTooltip><i class="fa fa-steam"></i></span></a>
+            {{endif}}
+            {{if settings.monitoring_showBansIcon == 1 && !empty( $serverInfoOther[$n]['bans'] )}}
+                <a href="{$serverInfoOther[$n]['bans']}" target="_blank"><span class="ipsBadge ipsBadge_negative ipsBadge_icon" _title="{lang="monitoring_bans"}" data-ipsTooltip><i class="fa fa-ban"></i></span></a>
+            {{endif}}
+            {{if settings.monitoring_showStatsIcon == 1 && !empty( $serverInfoOther[$n]['stats'] )}}
+                <a href="{$serverInfoOther[$n]['stats']}" target="_blank"><span class="ipsBadge ipsBadge_style2 ipsBadge_icon" _title="{lang="monitoring_stats"}" data-ipsTooltip><i class="fa fa-bar-chart"></i></span></a>
+            {{endif}}
+            {{if settings.monitoring_showShopIcon == 1 && !empty( $serverInfoOther[$n]['shop'] )}}
+                <a href="{$serverInfoOther[$n]['shop']}" target="_blank"><span class="ipsBadge ipsBadge_intermediary ipsBadge_icon" _title="{lang="monitoring_shop"}" data-ipsTooltip><i class="fa fa-shopping-cart"></i></span></a>
+            {{endif}}
+        </td>
+        {{if setting.monitoring_showModerator == 1}}
+            <td>
+                {{if !empty( $serverInfoOther[$n]['moderator'] )}}
+                    {$serverInfoOther[$n]['moderator']|raw}
+                {{else}}
+                    <span class="ipsType_medium ipsType_light">{lang="server_no_moderator"}</span>
+                {{endif}}
+            </td>
+        {{endif}}
+        <td>
+            <div class="ipsProgressBar ipsProgressBar_mini ipsProgressBar_fullWidth" _title="{lang="monitoring_filled" sprintf="$serverInfo[$n]['Info']['Fill']"}" data-ipsTooltip>
+                <div class="ipsProgressBar_progress ipsProgressBar_{{if $serverInfo[$n]['Info']['Fill'] < 20}}green
+                {{elseif $serverInfo[$n]['Info']['Fill'] >= 20 && $serverInfo[$n]['Info']['Fill'] < 40}}lightBlue
+                {{elseif $serverInfo[$n]['Info']['Fill'] >= 40 && $serverInfo[$n]['Info']['Fill'] < 60}}blue
+                {{elseif $serverInfo[$n]['Info']['Fill'] >= 60 && $serverInfo[$n]['Info']['Fill'] < 80}}yellow
+                {{elseif $serverInfo[$n]['Info']['Fill'] >= 80 && $serverInfo[$n]['Info']['Fill'] < 100}}orange
+                {{elseif $serverInfo[$n]['Info']['Fill'] == 100}}red
+                {{endif}}" style="width: {$serverInfo[$n]['Info']['Fill']}%" data-role="progressBar">
+                    <div class="playersCount">
+                        <a href="#" data-ipsdialog data-ipsdialog-size="narrow" data-ipsdialog-title="Players" data-ipsdialog-content="#playersInfo{$n}">{$serverInfo[$n]['Info']['Players']}/{$serverInfo[$n]['Info']['MaxPlayers']}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="playersInfo ipsHide" id="playersInfo{$n}">
+                {{if !empty( $serverInfo[$n]['Players'] )}}
+                    <table class="ipsTable ipsTable_responsive">
+                        <tr>
+                            <th align="center">#</th>
+                            <th>Name</th>
+                            <th>Frags</th>
+                            <th>Time</th>
+                        </tr>
+
+                        {{foreach $serverInfo[$n]['Players'] as $player}}
+                            <tr>
+                                <td align="center"><i class="fa fa-user"></i></td>
+                                <td>{$player['Name']}</td>
+                                <td>{$player['Frags']}</td>
+                                <td>{$player['TimeF']}</td>
+                            </tr>
+                        {{endforeach}}
+                    </table>
+                {{else}}
+                    {lang="monitoring_no_data"}
+                {{endif}}
+            </div>
+        </td>
+    </tr>
+{{endforeach}}

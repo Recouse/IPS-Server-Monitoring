@@ -1,0 +1,42 @@
+[
+    {
+        "key": "monitoring_groups",
+        "default": ""
+    },
+    {
+        "key": "monitoring_showBansIcon",
+        "default": "1"
+    },
+    {
+        "key": "monitoring_showGameIcon",
+        "default": "1"
+    },
+    {
+        "key": "monitoring_showGameTrackerIcon",
+        "default": "1"
+    },
+    {
+        "key": "monitoring_showMapsFromGt",
+        "default": "1"
+    },
+    {
+        "key": "monitoring_showMod",
+        "default": "0"
+    },
+    {
+        "key": "monitoring_showModerator",
+        "default": "0"
+    },
+    {
+        "key": "monitoring_showShopIcon",
+        "default": "1"
+    },
+    {
+        "key": "monitoring_showStatsIcon",
+        "default": "1"
+    },
+    {
+        "key": "monitoring_showSteamConnectIcon",
+        "default": "1"
+    }
+]

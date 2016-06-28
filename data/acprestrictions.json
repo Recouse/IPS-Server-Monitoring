@@ -1,0 +1,13 @@
+{
+    "monitoring": {
+        "main": {
+            "main_manage": "main_manage"
+        },
+        "server": {
+            "server_manage": "server_manage"
+        },
+        "settings": {
+            "settings_manage": "settings_manage"
+        }
+    }
+}

@@ -1,0 +1,70 @@
+<ips:template parameters="$info, $chart" />
+<div class="ipsPageHeader ipsClearfix ipsSpacer_bottom">
+    <h1 class="ipsType_pageTitle">{$info['app']['name']} <span class="ipsBadge ipsBadge_positive ipsBadge_large">{$info['app']['version']}</h1>
+</div>
+<div class='ipsColumns'>
+    <div class='ipsColumn ipsColumn_fluid'>
+        <div class="ipsBox ipsSpacer_bottom">
+            <h2 class="ipsType_sectionTitle ipsType_reset">Server Information</h2>
+            <div class="ipsPad">
+                <ul class="ipsDataList">
+                    <li class="ipsDataItem">
+                        <span class="ipsDataItem_generic ipsDataItem_size4"><strong>Servers</strong></span>
+                        <span class="ipsDataItem_generic cFileInfoData">{$info['server']['count']} ({$info['server']['countEnabled']} enabled)</span>
+                    </li>
+                    <li class="ipsDataItem">
+                        <span class="ipsDataItem_generic ipsDataItem_size4"><strong>Players</strong></span>
+                        <span class="ipsDataItem_generic cFileInfoData">{$info['server']['info']['AllPlayers']} / {$info['server']['info']['MaxAllPlayers']} ({$info['server']['info']['AllFill']}%)</span>
+                    </li>
+                    <li class="ipsDataItem">
+                        <span class="ipsDataItem_generic ipsDataItem_size4"><strong>Last update</strong></span>
+                        <span class="ipsDataItem_generic cFileInfoData">{$info['server']['lastUpdate']|raw}</span>
+                    </li>
+                    <li class="ipsDataItem">
+                        <div class="ipsPad_top ipsType_center">
+                            <a href="{url="app=monitoring&module=monitoring&controller=main&do=updateCache"}" class="ipsButton ipsButton_small ipsButton_normal" data-delete-warning="{lang="server_cache_refresh_confirm_desc"}" data-delete><i class="fa fa-refresh"></i> Update cache</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class='ipsColumn ipsColumn_fluid'>
+        <div class="ipsBox ipsSpacer_bottom">
+            <h2 class="ipsType_sectionTitle ipsType_reset">Application Information</h2>
+            <div class="ipsPad">
+                <ul class="ipsDataList">
+                    <li class="ipsDataItem">
+                        <span class="ipsDataItem_generic ipsDataItem_size4"><strong>Version</strong></span>
+                        <span class="ipsDataItem_generic cFileInfoData">{$info['app']['version']} ({$info['app']['longVersion']})</span>
+                    </li>
+                    <li class="ipsDataItem">
+                        <span class="ipsDataItem_generic ipsDataItem_size4"><strong>Author</strong></span>
+                        <span class="ipsDataItem_generic cFileInfoData">{$info['app']['author']}</span>
+                    </li>
+                    <li class="ipsDataItem">
+                        <span class="ipsDataItem_generic ipsDataItem_size4"><strong>Author website</strong></span>
+                        <span class="ipsDataItem_generic cFileInfoData">
+                            <a href="{$info['app']['website']}" target="_blank">{$info['app']['website']}</a>
+                        </span>
+                    </li>
+                    <li class="ipsDataItem">
+                        <div class="ipsPad_top ipsType_center">
+                            <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?account=410011171936918&quickpay=small&any-card-payment-type=on&button-text=05&button-size=m&button-color=orange&targets=Donate+for+Monitoring&default-sum=150&successURL=" width="198" height="54"></iframe>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ipsColumns">
+    <div class='ipsColumn ipsColumn_fluid'>
+        <div class="ipsBox ipsSpacer_bottom">
+            <h2 class="ipsType_sectionTitle ipsType_reset">Online Players</h2>
+            <div class="ipsPad">
+                {$chart|raw}
+            </div>
+        </div>
+    </div>
+</div>

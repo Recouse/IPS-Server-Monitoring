@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language>
+ <app key="monitoring" version="10000">
+  <word key="__app_monitoring" js="0">Server Monitoring</word>
+  <word key="menutab__monitoring" js="0">Server Monitoring</word>
+  <word key="menutab__monitoring_icon" js="0">list-alt</word>
+  <word key="menu__monitoring_monitoring" js="0">Monitoring</word>
+  <word key="menu__monitoring_monitoring_main" js="0">Overview</word>
+  <word key="menu__monitoring_monitoring_server" js="0">Servers</word>
+  <word key="menu__monitoring_monitoring_settings" js="0">Settings</word>
+  <word key="r__overview" js="0">Overview</word>
+  <word key="server_cache_refresh_confirm_desc" js="0">Servers cache will be deleted.</word>
+  <word key="server_cache_refreshed" js="0">Servers cache refreshed</word>
+  <word key="server_players" js="0">Online players</word>
+  <word key="r__server" js="0">Servers</word>
+  <word key="server_add" js="0">Add New Server</word>
+  <word key="server_edit" js="0">Edit Server</word>
+  <word key="server_delete_confirm_desc" js="0">The server will be permanently deleted. This action cannot be undone.</word>
+  <word key="server_server_game" js="0"></word>
+  <word key="server_server_enabled" js="0">Status</word>
+  <word key="server_server_name" js="0">Name</word>
+  <word key="server_server_address" js="0">IP Address</word>
+  <word key="server_server_mod" js="0">Mod</word>
+  <word key="server_m.member_id" js="0">Moderator</word>
+  <word key="server_enabled" js="0">Enabled</word>
+  <word key="server_disabled" js="0">Disabled</word>
+  <word key="server_no_moderator" js="0">No moderator</word>
+  <word key="server_general" js="0">General</word>
+  <word key="server_other" js="0">Other</word>
+  <word key="server_name" js="0">Name</word>
+  <word key="server_port" js="0">Port</word>
+  <word key="server_game" js="0">Game</word>
+  <word key="server_moderator" js="0">Moderator</word>
+  <word key="server_mod" js="0">Mod</word>
+  <word key="server_mod_description" js="0">Description of mod</word>
+  <word key="server_bans" js="0">Ban list</word>
+  <word key="server_bans_desc" js="0">Link to server ban list.</word>
+  <word key="server_stats" js="0">Statistics</word>
+  <word key="server_stats_desc" js="0">Link to server statistics.</word>
+  <word key="server_shop" js="0">Shop</word>
+  <word key="server_shop_desc" js="0">Link to server privileges shop.</word>
+  <word key="monitoring_general" js="0">General</word>
+  <word key="monitoring_customization" js="0">Customization</word>
+  <word key="monitoring_groups" js="0">Who can see?</word>
+  <word key="monitoring_showMapsFromGt" js="0">Show maps from GameTracker?</word>
+  <word key="monitoring_showGameIcon" js="0">Show game icon?</word>
+  <word key="monitoring_showMod" js="0">Show game mod?</word>
+  <word key="monitoring_showModerator" js="0">Show server moderator?</word>
+  <word key="monitoring_showGameTrackerIcon" js="0">Show GameTracker icon?</word>
+  <word key="monitoring_showSteamConnectIcon" js="0">Show Steam connect icon?</word>
+  <word key="monitoring_showBansIcon" js="0">Show bans icon?</word>
+  <word key="monitoring_showStatsIcon" js="0">Show stats icon?</word>
+  <word key="monitoring_showShopIcon" js="0">Show shop icon?</word>
+  <word key="loc_monitoring_viewing_monitoring" js="0">Viewing Server Monitoring</word>
+  <word key="frontnavigation_monitoring" js="0">Server Monitoring</word>
+  <word key="module__monitoring_monitoring" js="0">Server Monitoring</word>
+  <word key="monitoring_map_changing" js="0">Map changing</word>
+  <word key="monitoring_no_data" js="0">No data</word>
+  <word key="monitoring_status" js="0">Status</word>
+  <word key="monitoring_ip_address" js="0">IP Address</word>
+  <word key="monitoring_server_name" js="0">Server Name</word>
+  <word key="monitoring_map" js="0">Map</word>
+  <word key="monitoring_mod" js="0">Mod</word>
+  <word key="monitoring_other" js="0">Other</word>
+  <word key="monitoring_moderator" js="0">Moderator</word>
+  <word key="monitoring_players" js="0">Players</word>
+  <word key="monitoring_filled" js="0">Filled %d%%</word>
+  <word key="monitoring_game_tracker" js="0">GameTracker</word>
+  <word key="monitoring_steam" js="0">Steam connect</word>
+  <word key="monitoring_bans" js="0">Bans</word>
+  <word key="monitoring_stats" js="0">Statistics</word>
+  <word key="monitoring_shop" js="0">Privilege purchase</word>
+ </app>
+</language>

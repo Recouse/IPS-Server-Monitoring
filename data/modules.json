@@ -1,0 +1,14 @@
+{
+    "admin": {
+        "monitoring": {
+            "default_controller": "main",
+            "protected": 0
+        }
+    },
+    "front": {
+        "monitoring": {
+            "default_controller": "server",
+            "protected": 0
+        }
+    }
+}
