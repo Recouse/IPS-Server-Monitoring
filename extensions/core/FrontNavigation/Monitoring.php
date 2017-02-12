@@ -73,7 +73,7 @@ class _Monitoring extends \IPS\core\FrontNavigation\FrontNavigationAbstract
 	 */
 	public function link()
 	{
-		return \IPS\Http\Url::internal( "app=monitoring&module=monitoring&controller=server", 'front', 'monitoring' );
+		return \IPS\Http\Url::internal( "app=monitoring&module=monitoring&controller=servers", 'front', 'monitoring' );
 	}
 	
 	/**

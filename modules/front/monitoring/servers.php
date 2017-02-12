@@ -11,9 +11,9 @@ if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
 }
 
 /**
- * server
+ * servers
  */
-class _server extends \IPS\Dispatcher\Controller
+class _servers extends \IPS\Dispatcher\Controller
 {
 	/**
 	 * Execute
@@ -22,7 +22,7 @@ class _server extends \IPS\Dispatcher\Controller
 	 */
 	public function execute()
 	{
-
+		
 		parent::execute();
 	}
 
@@ -62,6 +62,6 @@ class _server extends \IPS\Dispatcher\Controller
 			\IPS\Output::i()->error( 'no_module_permission', '2G188/9', 403, '' );
 		}
 	}
-
+	
 	// Create new methods with the same name as the 'do' parameter which should execute it
 }
