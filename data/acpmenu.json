@@ -6,6 +6,12 @@
             "do": "",
             "restriction": "main_manage"
         },
+        "servers": {
+            "tab": "monitoring",
+            "controller": "servers",
+            "do": "",
+            "restriction": "servers_manage"
+        },
         "settings": {
             "tab": "monitoring",
             "controller": "settings",

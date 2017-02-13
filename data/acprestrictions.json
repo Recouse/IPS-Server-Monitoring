@@ -5,6 +5,9 @@
         },
         "settings": {
             "settings_manage": "settings_manage"
+        },
+        "servers": {
+            "servers_manage": "servers_manage"
         }
     }
 }
