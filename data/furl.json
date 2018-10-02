@@ -30,7 +30,7 @@
     },
     "monitoring": {
       "friendly": "",
-      "real": "app=monitoring&module=monitoring&controller=server"
+      "real": "app=monitoring&module=monitoring&controller=servers"
     }
   }
 }

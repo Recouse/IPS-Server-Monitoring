@@ -6,7 +6,7 @@ $lang = array(
 	'menutab__monitoring_icon' => "list-alt",
 	'menu__monitoring_monitoring' => "Monitoring",
 	'menu__monitoring_monitoring_main' => "Overview",
-	'menu__monitoring_monitoring_server' => "Servers",
+	'menu__monitoring_monitoring_servers' => "Servers",
 	'menu__monitoring_monitoring_settings' => "Settings",
 
 	/**

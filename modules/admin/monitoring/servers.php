@@ -11,9 +11,9 @@ if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
 }
 
 /**
- * server
+ * servers
  */
-class _server extends \IPS\Dispatcher\Controller
+class _servers extends \IPS\Dispatcher\Controller
 {
 	/**
 	 * Games list

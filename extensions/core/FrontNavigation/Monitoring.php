@@ -35,11 +35,23 @@ class _Monitoring extends \IPS\core\FrontNavigation\FrontNavigationAbstract
 	}
 	
 	/**
-	 * Can access?
+	 * Can this item be used at all?
+	 * For example, if this will link to a particular feature which has been diabled, it should
+	 * not be available, even if the user has permission
 	 *
 	 * @return	bool
 	 */
-	public function canView()
+	public static function isEnabled()
+	{
+		return TRUE;
+	}
+
+	/**
+	 * Can the currently logged in user access the content this item links to?
+	 *
+	 * @return	bool
+	 */
+	public function canAccessContent()
 	{
 		return TRUE;
 	}
@@ -61,7 +73,7 @@ class _Monitoring extends \IPS\core\FrontNavigation\FrontNavigationAbstract
 	 */
 	public function link()
 	{
-		return \IPS\Http\Url::internal( "app=monitoring&module=monitoring&controller=server", 'front', 'monitoring' );
+		return \IPS\Http\Url::internal( "app=monitoring&module=monitoring&controller=servers", 'front', 'monitoring' );
 	}
 	
 	/**
@@ -77,10 +89,11 @@ class _Monitoring extends \IPS\core\FrontNavigation\FrontNavigationAbstract
 	/**
 	 * Children
 	 *
+	 * @param	bool	$noStore	If true, will skip datastore and get from DB (used for ACP preview)
 	 * @return	array
 	 */
-	public function children()
+	public function children( $noStore=FALSE )
 	{
-		return array();
+		return NULL;
 	}
 }

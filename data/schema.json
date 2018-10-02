@@ -1,6 +1,6 @@
 {
-    "monitoring_server": {
-        "name": "monitoring_server",
+    "monitoring_servers": {
+        "name": "monitoring_servers",
         "columns": {
             "server_id": {
                 "name": "server_id",
@@ -183,6 +183,28 @@
                 ]
             }
         },
-        "comment": "Server"
+        "comment": "Servers"
+    },
+    "monitoring_servers_data": {
+        "name": "monitoring_servers_data",
+        "columns": {
+            "server_id": {
+                "allow_null": false,
+                "auto_increment": false,
+                "binary": false,
+                "comment": "",
+                "decimals": null,
+                "default": "0",
+                "length": 10,
+                "name": "server_id",
+                "type": "INT",
+                "unsigned": false,
+                "values": [],
+                "zerofill": false
+            }
+        },
+        "indexes": [],
+        "collation": "utf8mb4_unicode_ci",
+        "engine": "InnoDB"
     }
 }
