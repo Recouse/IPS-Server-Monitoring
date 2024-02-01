@@ -1,5 +1,5 @@
 # IPS Server Monitoring
-![IPS Server Monitoring](https://www.dropbox.com/s/227evhp4btaezsn/screen1.png?dl=1)
+![IPS Server Monitoring](https://i.imgur.com/Asi3fRD.png)
 ## Description
 Server Monitoring for your community.
 
